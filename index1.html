@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(show, index) in tvshows" v-bind:key="index">
+                <strong>{{show.name}}:</strong>({{show.season}} Temporadas) 
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+    <script>
+    const app = new Vue({
+        el:'#app',
+        data: {
+            tvshows: [
+                {name: 'Game o Thrones', season: 7},
+                {name: 'Breaking BAd', season: 5},
+                {name:'LOST', season: 6},
+                {name: 'Battlestar Galactic', season:4}
+            ]
+        }
+    })
+    </script>
+</body>
+</html>
