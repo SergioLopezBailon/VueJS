@@ -9,12 +9,13 @@
 </head>
 <body>
     <div id="app">
+        <button @click="changeVisibility">Mostrar/Ocultar</button>
         <ul v-if="mostrar">
             <li v-for="(show, index) in tvshows" v-bind:key="index">
                 <strong>{{show.name}}:</strong>({{show.season}} Temporadas) 
             </li>
         </ul>
-        <div v-else="mostrar">
+        <div v-else>
             No hay datos
         </div>
     </div>
@@ -29,6 +30,11 @@
                 {name:'LOST', season: 6},
                 {name: 'Battlestar Galactic', season:4}
             ]
+        },
+        methods:{
+            changeVisibility: function(){
+                this.mostrar = !this.mostrar;
+            }
         }
     })
     </script>
